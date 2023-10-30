@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b3d9ce21a164cb197a5328c2ac06f20" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Actions" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Community" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Files" Width="1.5" PointX="5.75" PointY="2.25" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Operators" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Programs" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.QuestionTypes" Width="1.5" PointX="3.75" PointY="15" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Regions" Width="1.5" PointX="0.5" PointY="8.125" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.ReponseChoices" Width="1.5" PointX="8.25" PointY="15.5" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.UserResponses" Width="1.5" PointX="8.25" PointY="8.5" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Programs_UMB" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Programs_Regions" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Status" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.AspNetRoles" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.AspNetUsers" Width="1.5" PointX="3.75" PointY="18" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Forms" Width="1.5" PointX="6" PointY="6.5" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_AspNetUsers" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Community" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Programs" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Status" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Status1" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Status2" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_UserResponses_Forms" />
+        <AssociationConnector Association="BD_IJPReportingModel.Forms_Regions" />
+        <AssociationConnector Association="BD_IJPReportingModel.UsersRegions" />
+        <AssociationConnector Association="BD_IJPReportingModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.SubQuestions" Width="1.5" PointX="8.25" PointY="19.875" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Conditions" Width="1.5" PointX="11.25" PointY="13.375" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Conditions_Actions" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Conditions_Operators" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Form_Type" Width="1.75" PointX="1.25" PointY="16.375" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Conditions_Form_Type" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Forms_Form_Type" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Section_Conditions" Width="1.5" PointX="12.75" PointY="8.875" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Section_Conditions_Actions" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Section_Conditions_Form_Type" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Section_Conditions_Operators" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Section_Conditions_Regions" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Section" Width="1.5" PointX="3.75" PointY="23.875" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Section_Conditions_Section" />
+        <AssociationConnector Association="BD_IJPReportingModel.FormType_Sections" />
+        <EntityTypeShape EntityType="BD_IJPReportingModel.Questions" Width="1.5" PointX="6" PointY="18.125" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Conditions_Questions" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Questions_Form_Type" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Questions_QuestionTypes" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_Questions_Section" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_ReponseChoices_Questions" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_SubQuestions_Questions" />
+        <AssociationConnector Association="BD_IJPReportingModel.FK_UserResponses_Questions" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

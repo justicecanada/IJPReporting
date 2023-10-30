@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="bt_login.Text" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="ForgotPassword.Text" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Login.InnerHtml" xml:space="preserve">
+    <value>Sign in to your account</value>
+  </data>
+  <data name="Register.Text" xml:space="preserve">
+    <value>Create a new account</value>
+  </data>
+  <data name="RememberMe.InnerHtml" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="tb_email.LabelText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="tb_pwd.LabelText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginPage.Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="AlertEmailNotConfirmedContent" xml:space="preserve">
+    <value>Please confirm your email prior to loggin in.</value>
+  </data>
+  <data name="AlertEmailNotConfirmedTitle" xml:space="preserve">
+    <value>Email not confirmed</value>
+  </data>
+  <data name="resendConfirmation.Text" xml:space="preserve">
+    <value>Resend confirmation link</value>
+  </data>
+  <data name="lbl_SMContent.Text" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;br/&gt;Users should be aware that this databank allows system administrators the possibility of tracking all user transactions in the context of the system's maintenance, integrity, and security. The use of the IJPReporting databank is subject to monitoring by the system administrators as required by the federal Policy on Government Security (&lt;a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=16578"&gt;http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=16578&lt;/a&gt;). Anyone using the IJPReporting databank implicitly consents to such monitoring. Unauthorized use by employees or others may result in disciplinary action and/or criminal prosecution.&lt;br/&gt;&lt;br/&gt;
+I hereby confirm that I have read and understood the terms and conditions mentioned above and agree to comply with these terms and conditions.</value>
+  </data>
+  <data name="lbl_SMHeader.Text" xml:space="preserve">
+    <value>&lt;b&gt;SYSTEM MONITORING/ SECURITY POLICY&lt;/b&gt;</value>
+  </data>
+  <data name="lbl_TCContent.Text" xml:space="preserve">
+    <value>Internal users of the Department of Justice Canada (Justice) IJPReporting databank must read, understand and agree with the terms and conditions set out below when accessing the databank. These terms and conditions will ensure the integrity of the IJPReporting databank and protect the information contained therein.&lt;br/&gt;&lt;br/&gt;
+The information found in the IJPReporting as a result of the administration of these information services to the public must, at all times, be protected and shared only with those authorized to obtain it in accordance with the federal privacy legislation, policies and guidelines.&lt;br/&gt;&lt;br/&gt;
+Users and administrators must only connect to the IJPReporting databank from the Family Law Services Assistance Services unit within Justice’s premises and never remotely.  To connect, a user must only use his own user name provided by Justice and own password at all times and must disconnect when the use of the databank is no longer required.  The user will ensure that his computer is locked each time he leaves his desk, requiring a strong password to unlock.  Access to the databank will only be provided to those authorized to obtain it and who hold at all times a valid Secret security clearance.&lt;br/&gt;&lt;br/&gt;
+Users must view only data found in the IJPReporting databank that falls under their responsibility and only for business purposes.&lt;br/&gt;&lt;br/&gt;
+Any technical problems concerning the databank must be submitted to the email address indicated under the Contact tab.&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="lbl_TCHeader.Text" xml:space="preserve">
+    <value>&lt;b&gt;TERMS AND CONDITIONS FOR THE USE OF FCYINFOLINE DATABANK
+INTERNAL USERS&lt;/b&gt;</value>
+  </data>
+</root>

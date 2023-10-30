@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
+  <siteMapNode url="#" title=""  description="" roles="*">
+    <siteMapNode url="~/Default.aspx" resourceKey="accueil" title="Home" description="" roles="Agent, Admin, SuperAdmin" />
+    <siteMapNode url="~/ClientReferralReporting.aspx" title="Client/Referral Reporting" description="" roles="Agent, Admin, SuperAdmin" />
+    <siteMapNode url="~/MyForms.aspx" title="Uploaded Forms" description="" roles="Agent, Admin, SuperAdmin" />
+    <siteMapNode url="~/Contact" title="Contact" description="" roles="*" />
+    <siteMapNode url="~/Management" title="Management" roles="Agent; Admin, SuperAdmin">
+      <siteMapNode url="~/Admin/ConfigRoles.aspx" resourceKey="configRoles" title="Role Manager" description="" roles="Admin, SuperAdmin" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

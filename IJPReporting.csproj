@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{786934A6-FE40-44F0-B21E-11D6EF225908}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IJPReporting</RootNamespace>
+    <AssemblyName>IJPReporting</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET, Version=3.6.4.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GabaritInternet\GabaritInternet\bin\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GabaritInternet\GabaritInternet\bin\Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Localization.resources">
+      <HintPath>..\..\GabaritInternet\GabaritInternet\bin\fr\Localization.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WetControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\WetControls\bin\Debug\WetControls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>..\packages\WindowsBase.4.6.1055.0\lib\WindowsBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\App_LocalResources\Lockout.aspx.fr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\Manage.aspx.fr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\ManagePassword.aspx.fr.resx" />
+    <Content Include="Account\App_LocalResources\ResetPassword.aspx.fr.resx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="API.asmx" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\CKEditor.NET.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\IJPReporting.dll" />
+    <Content Include="bin\Localization.dll" />
+    <Content Include="bin\Localization.resources.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.Exchange.WebServices.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Outlook.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WinForms.DLL" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\WetControls.dll" />
+    <Content Include="bin\WetControls.pdb" />
+    <Content Include="bin\WindowsBase.dll" />
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\build-config.js" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\id.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\ka.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\ku.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mk.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\si.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sq.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\tt.js" />
+    <Content Include="ckeditor\lang\ug.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\icons.png" />
+    <Content Include="ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="ckeditor\skins\moono\dialog.css" />
+    <Content Include="ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="ckeditor\skins\moono\editor.css" />
+    <Content Include="ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="ckeditor\skins\moono\icons.png" />
+    <Content Include="ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="ckeditor\skins\moono\images\close.png" />
+    <Content Include="ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="ckeditor\skins\moono\images\lock.png" />
+    <Content Include="ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="ckeditor\styles.js" />
+    <Content Include="Contact.aspx" />
+    <Content Include="AddReferral.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="GCWebUsabilityTheme\MasterPages\GCWebUsability-SectionMenu.master" />
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\ConfigRoles.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GCWebUsabilityTheme\Controls\Breadcrumb.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\DateModified.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\Footer-GCWebUsability.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\Footer.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\LanguageSelection.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\LanguageSelectionGCWebUsability.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\Search-GCWebUsability.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\Search.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\SearchAndMenus.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\SecondaryMenu-GCWebUsability.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\SectionMenu.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\SiteMenu.ascx" />
+    <Content Include="GCWebUsabilityTheme\Controls\TopOfPage.ascx" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\ajax\sitemenu-en.html" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\ajax\sitemenu-fr.html" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\cloud-popup-relative.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\favicon-mobile.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\favicon.ico" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\fd-slider-sprite.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\header-bg-ie.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\header-bg.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\header-leaf.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\loading.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\mediacontrols.html" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sft-deco-leaf.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sft-deco-side.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sft-deco.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-alt-en.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-alt-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-alt-fr.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-alt-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-blk-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-blk-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-en-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-en-w.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-en.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-fr-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-fr-w.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-fr.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sig-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sl_feeds.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sl_twitter.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sl_youtube.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sp-pe-bg-ie.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sp-pe-bg.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sp-pe-leaf.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sprites_geomap.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\sprites_share.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\wmms-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\wmms-alt.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\wmms-blk.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\wmms.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\wmms.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\zoom-minus-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\zoom-plus-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\assets\zoom-world-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\DevAppsCustom.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-sp-pe-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-sp-pe-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-sp-pe.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-sp-pe.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-srv-coa .css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-srv-coa .min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-srv.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme-srv.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-theme.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-wet-boew.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\ie8-wet-boew.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\noscript.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\noscript.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\datalist.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\datalist.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\datepicker.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\datepicker.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\details.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\details.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\meter.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\meter.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\progress.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\progress.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\slider.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\polyfills\slider.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-sp-pe-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-sp-pe-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-sp-pe.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-sp-pe.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-srv-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-srv-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-srv.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme-srv.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\theme.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\wet-boew.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\css\wet-boew.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\additional-methods.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\additional-methods.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\geomap-lib.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\geomap-lib.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.dataTables.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.dataTables.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.canvas.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.canvas.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.orderBars.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.orderBars.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.pie.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.flot.pie.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.magnific-popup.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.magnific-popup.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.pjax.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.pjax.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.validate.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\jquery.validate.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-apollo.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-apollo.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-basic.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-basic.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-clj.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-clj.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-css.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-css.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-dart.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-dart.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-erlang.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-erlang.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-go.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-go.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-hs.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-hs.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-lisp.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-lisp.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-llvm.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-llvm.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-lua.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-lua.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-matlab.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-matlab.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-ml.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-ml.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-mumps.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-mumps.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-n.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-n.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-pascal.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-pascal.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-proto.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-proto.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-r.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-r.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-rd.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-rd.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-scala.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-scala.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-sql.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-sql.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-tcl.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-tcl.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-tex.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-tex.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-vb.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-vb.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-vhdl.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-vhdl.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-wiki.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-wiki.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-xq.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-xq.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-yaml.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\lang-yaml.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\OpenLayers.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\OpenLayers.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\prettify.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\prettify.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\proj4.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\proj4.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\run_prettify.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\run_prettify.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\tableparser.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\deps\tableparser.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\i18n\en.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\i18n\en.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\i18n\fr.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\i18n\fr.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\ie8-wet-boew.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\ie8-wet-boew.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\ie8-wet-boew2.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\ie8-wet-boew2.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\1.11.1\jquery.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\1.11.1\jquery.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\2.1.4\jquery.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\2.1.4\jquery.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist_dynamic.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist_dynamic.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datepicker.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datepicker.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\details.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\details.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\jawsariafixes.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\jawsariafixes.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\meter.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\meter.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\mobile.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\mobile.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\progress.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\progress.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider_wrapper.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider_wrapper.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\svg.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\svg.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\test.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\test.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\theme.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\theme.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\wet-boew.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\wet-boew.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\favicon-mobile.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\favicon.ico" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\header-bg-ie.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\header-bg.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\header-leaf.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sft-deco-leaf.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sft-deco-side.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sft-deco.gif" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-alt-en.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-alt-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-alt-fr.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-alt-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-blk-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-blk-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-en-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-en-w.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-en.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-en.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-fr-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-fr-w.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-fr.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sig-fr.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sl_feeds.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sl_twitter.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sl_youtube.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sp-pe-bg-ie.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sp-pe-bg.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\sp-pe-leaf.jpg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\wmms-alt.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\wmms-alt.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\wmms-blk.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\wmms.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\assets\wmms.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-sp-pe-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-sp-pe-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-sp-pe.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-sp-pe.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-srv-coa .css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-srv-coa .min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-srv.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme-srv.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-theme.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-wet-boew.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\ie8-wet-boew.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-sp-pe-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-sp-pe-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-sp-pe.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-sp-pe.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-srv-coa.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-srv-coa.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-srv.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme-srv.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\theme.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\wet-boew.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\css\wet-boew.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\js\theme.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\js\theme.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\Licence-fr.txt" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\theme-gcwu-fegc\License-en.txt" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\cloud-popup-relative.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\fd-slider-sprite.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\loading.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\mediacontrols.html" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\sprites_geomap.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\sprites_share.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\zoom-minus-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\zoom-plus-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\assets\zoom-world-mini.png" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\noscript.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\noscript.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\datalist.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\datalist.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\datepicker.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\datepicker.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\details.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\details.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\meter.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\meter.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\progress.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\progress.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\slider.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\css\polyfills\slider.min.css" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\additional-methods.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\additional-methods.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\geomap-lib.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\geomap-lib.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.dataTables.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.dataTables.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.canvas.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.canvas.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.orderBars.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.orderBars.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.pie.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.flot.pie.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.magnific-popup.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.magnific-popup.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.pjax.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.pjax.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.validate.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\jquery.validate.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-apollo.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-apollo.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-basic.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-basic.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-clj.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-clj.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-css.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-css.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-dart.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-dart.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-erlang.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-erlang.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-go.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-go.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-hs.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-hs.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-lisp.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-lisp.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-llvm.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-llvm.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-lua.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-lua.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-matlab.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-matlab.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-ml.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-ml.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-mumps.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-mumps.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-n.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-n.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-pascal.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-pascal.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-proto.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-proto.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-r.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-r.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-rd.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-rd.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-scala.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-scala.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-sql.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-sql.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-tcl.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-tcl.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-tex.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-tex.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-vb.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-vb.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-vhdl.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-vhdl.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-wiki.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-wiki.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-xq.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-xq.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-yaml.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\lang-yaml.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\OpenLayers.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\OpenLayers.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\prettify.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\prettify.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\proj4.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\proj4.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\run_prettify.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\run_prettify.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\tableparser.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\deps\tableparser.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\i18n\en.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\i18n\en.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\i18n\fr.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\i18n\fr.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\ie8-wet-boew.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\ie8-wet-boew.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\ie8-wet-boew2.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\ie8-wet-boew2.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\1.11.1\jquery.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\1.11.1\jquery.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\2.1.4\jquery.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\2.1.4\jquery.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist_dynamic.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist_dynamic.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datepicker.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datepicker.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\details.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\details.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\jawsariafixes.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\jawsariafixes.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\meter.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\meter.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\mobile.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\mobile.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\progress.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\progress.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider_wrapper.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider_wrapper.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\svg.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\svg.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\test.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\test.min.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\wet-boew.js" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\wet-boew.min.js" />
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\ConfigRoles.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\alberta-amazing-attraction-banff-417074.jpg" />
+    <Content Include="Images\brown-wooden-house-and-mountain-reflecting-on-lake-1586298.jpg" />
+    <Content Include="Images\IJP_Header4.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Account\Logout.aspx" />
+    <Content Include="Images\scenic-photo-of-trees-across-mountains-2676841.jpg" />
+    <Content Include="Images\scenic-view-of-mountains-under-cloudy-sky-2695391.jpg" />
+    <Content Include="Images\sergei-akulich--heLWtuAN3c-unsplash%281%29.jpg" />
+    <Content Include="Models\IJPModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IJPModel.edmx</DependentUpon>
+      <LastGenOutput>IJPModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\IJPModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IJPModel.edmx</DependentUpon>
+      <LastGenOutput>IJPModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="MyForms.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Account\Web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="ckeditor\CHANGES.md" />
+    <Content Include="ckeditor\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\README.md" />
+    <Content Include="ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="ckeditor\plugins\wsc\README.md" />
+    <Content Include="ckeditor\README.md" />
+    <Content Include="ckeditor\skins\moono\readme.md" />
+    <Content Include="GCWebUsabilityTheme\MasterPages\GCWebUsability.master" />
+    <Content Include="GCWebUsabilityTheme\MasterPages\Splash.master" />
+    <Content Include="GCWebUsabilityTheme\MasterPages\Wet-Boew.Master" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Footer.fr.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Footer.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Footer2.fr.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Footer2.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Header.fr.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Header.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Web.fr.sitemap" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Web.sitemap" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\wet-boew.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\1.11.1\jquery.min.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\jquery\2.1.4\jquery.min.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datalist_dynamic.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\datepicker.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\details.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\jawsariafixes.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\meter.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\mobile.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\progress.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\slider_wrapper.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\svg.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\js\polyfills\test.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\wet-boew.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\1.11.1\jquery.min.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\jquery\2.1.4\jquery.min.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datalist_dynamic.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\datepicker.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\details.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\jawsariafixes.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\meter.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\mobile.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\progress.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\slider_wrapper.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\svg.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\polyfills\test.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\wet-v4\dist\wet-boew\js\wet-boew.min.js.map" />
+    <Content Include="GCWebUsabilityTheme\SiteMaps\Admin.sitemap" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="ckeditor\CHANGES.md" />
+    <Content Include="ckeditor\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\README.md" />
+    <Content Include="ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="ckeditor\plugins\wsc\README.md" />
+    <Content Include="ckeditor\README.md" />
+    <Content Include="ckeditor\skins\moono\readme.md" />
+    <Content Include="Referral.aspx" />
+    <Content Include="ClientReferralReporting.aspx" />
+    <Content Include="Scripts\DYMO.Label.Framework.2.0.2.js" />
+    <Content Include="Scripts\ijp.js" />
+    <Content Include="Scripts\PrintLabel.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="UploadForm.aspx" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <EmbeddedResource Include="App_GlobalResources\Email.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Email.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907161323576_RegionId.resx">
+      <DependentUpon>201907161323576_RegionId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910031239532_CommunityProgram.resx">
+      <DependentUpon>201910031239532_CommunityProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911071803436_AllowNull.resx">
+      <DependentUpon>201911071803436_AllowNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Models\IJPModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IJPModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\IJPModel.edmx.diagram">
+      <DependentUpon>IJPModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\QA.pubxml" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.countdown-fr.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\popup.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="StyleSheets\all.css" />
+    <Content Include="StyleSheets\Apps.css" />
+    <Content Include="StyleSheets\jquery.bxslider.css" />
+    <Content Include="StyleSheets\jquery.countdown.css" />
+    <Content Include="StyleSheets\popup.css" />
+    <Content Include="StyleSheets\thickbox.css" />
+    <Content Include="UserControls\CKEditor.ascx" />
+    <Content Include="UserControls\UCMultipleDropdownList.ascx" />
+    <Content Include="UserControls\UCRemovableDropdownList.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="UploadedForms\3d3d8225-985d-487e-aaf9-9615621eaed2.csv" />
+    <Content Include="UploadedForms\b92580f9-9801-457a-96f7-959e466e10d5.pdf" />
+    <Content Include="UploadedForms\d18fbcba-a82f-4a0a-81c8-f84ff6ba5809.pdf" />
+    <Content Include="UploadedForms\ece3eea4-ed1a-4734-b641-f73b2537ba01.docx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API.asmx.cs">
+      <DependentUpon>API.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="App_GlobalResources\Email.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Email.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Email.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Email.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Global.en.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\CsvResultSet.cs" />
+    <Compile Include="Code\DataTableParameters.cs" />
+    <Compile Include="Code\DataTableResultSet.cs" />
+    <Compile Include="Code\RemoveDDLEventArgs.cs" />
+    <Compile Include="Code\AddDDLEventArgs.cs" />
+    <Compile Include="Code\ExceptionIJP.cs" />
+    <Compile Include="Code\ImageResize.cs" />
+    <Compile Include="Code\MyExtensions.cs" />
+    <Compile Include="Code\UtilConge.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddReferral.aspx.cs">
+      <DependentUpon>AddReferral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddReferral.aspx.designer.cs">
+      <DependentUpon>AddReferral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\GCWebUsability-SectionMenu.master.cs">
+      <DependentUpon>GCWebUsability-SectionMenu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\GCWebUsability-SectionMenu.master.designer.cs">
+      <DependentUpon>GCWebUsability-SectionMenu.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ConfigRoles.aspx.cs">
+      <DependentUpon>ConfigRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ConfigRoles.aspx.designer.cs">
+      <DependentUpon>ConfigRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\DateTimeExtensions.cs" />
+    <Compile Include="Code\WetBoewConfiguration.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="GCWebUsabilityTheme\Controls\Breadcrumb.ascx.cs">
+      <DependentUpon>Breadcrumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Breadcrumb.ascx.designer.cs">
+      <DependentUpon>Breadcrumb.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\DateModified.ascx.cs">
+      <DependentUpon>DateModified.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\DateModified.ascx.designer.cs">
+      <DependentUpon>DateModified.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Footer-GCWebUsability.ascx.cs">
+      <DependentUpon>Footer-GCWebUsability.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Footer-GCWebUsability.ascx.designer.cs">
+      <DependentUpon>Footer-GCWebUsability.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\LanguageSelection.ascx.cs">
+      <DependentUpon>LanguageSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\LanguageSelection.ascx.designer.cs">
+      <DependentUpon>LanguageSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\LanguageSelectionGCWebUsability.ascx.cs">
+      <DependentUpon>LanguageSelectionGCWebUsability.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\LanguageSelectionGCWebUsability.ascx.designer.cs">
+      <DependentUpon>LanguageSelectionGCWebUsability.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Search-GCWebUsability.ascx.cs">
+      <DependentUpon>Search-GCWebUsability.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Search-GCWebUsability.ascx.designer.cs">
+      <DependentUpon>Search-GCWebUsability.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SearchAndMenus.ascx.cs">
+      <DependentUpon>SearchAndMenus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SearchAndMenus.ascx.designer.cs">
+      <DependentUpon>SearchAndMenus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SecondaryMenu-GCWebUsability.ascx.cs">
+      <DependentUpon>SecondaryMenu-GCWebUsability.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SecondaryMenu-GCWebUsability.ascx.designer.cs">
+      <DependentUpon>SecondaryMenu-GCWebUsability.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SectionMenu.ascx.cs">
+      <DependentUpon>SectionMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SectionMenu.ascx.designer.cs">
+      <DependentUpon>SectionMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SiteMenu.ascx.cs">
+      <DependentUpon>SiteMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\SiteMenu.ascx.designer.cs">
+      <DependentUpon>SiteMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\TopOfPage.ascx.cs">
+      <DependentUpon>TopOfPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\Controls\TopOfPage.ascx.designer.cs">
+      <DependentUpon>TopOfPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\GCWebUsability.master.cs">
+      <DependentUpon>GCWebUsability.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\GCWebUsability.master.designer.cs">
+      <DependentUpon>GCWebUsability.master</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\Splash.master.cs">
+      <DependentUpon>Splash.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\Splash.master.designer.cs">
+      <DependentUpon>Splash.master</DependentUpon>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\Wet-Boew.Master.cs">
+      <DependentUpon>Wet-Boew.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCWebUsabilityTheme\MasterPages\Wet-Boew.Master.designer.cs">
+      <DependentUpon>Wet-Boew.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IJPCodes.cs" />
+    <Compile Include="Helpers\Mailer.cs" />
+    <Compile Include="Helpers\ModelHelper.cs" />
+    <Compile Include="Helpers\WizardHelper.cs" />
+    <Compile Include="Logic\ViewStateControl.cs" />
+    <Compile Include="Logic\RoleActions.cs" />
+    <Compile Include="Account\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\WizardManager.cs" />
+    <Compile Include="Migrations\201701031634155_InitialCreate.cs" />
+    <Compile Include="Migrations\201701031634155_InitialCreate.Designer.cs">
+      <DependentUpon>201701031634155_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703011443265_LastPasswordChange.cs" />
+    <Compile Include="Migrations\201703011443265_LastPasswordChange.Designer.cs">
+      <DependentUpon>201703011443265_LastPasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907161323576_RegionId.cs" />
+    <Compile Include="Migrations\201907161323576_RegionId.Designer.cs">
+      <DependentUpon>201907161323576_RegionId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910031239532_CommunityProgram.cs" />
+    <Compile Include="Migrations\201910031239532_CommunityProgram.Designer.cs">
+      <DependentUpon>201910031239532_CommunityProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911071803436_AllowNull.cs" />
+    <Compile Include="Migrations\201911071803436_AllowNull.Designer.cs">
+      <DependentUpon>201911071803436_AllowNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Actions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Community.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Conditions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntitiesExtentions.cs" />
+    <Compile Include="Models\Files.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Forms.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Form_Type.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IJPModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IJPModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IJPModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IJPModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IJPModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Operators.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Programs.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Questions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuestionTypes.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Regions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReponseChoices.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Section.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Section_Conditions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Status.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubQuestions.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserResponses.cs">
+      <DependentUpon>IJPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms.aspx.cs">
+      <DependentUpon>MyForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyForms.aspx.designer.cs">
+      <DependentUpon>MyForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referral.aspx.cs">
+      <DependentUpon>Referral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referral.aspx.designer.cs">
+      <DependentUpon>Referral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientReferralReporting.aspx.cs">
+      <DependentUpon>ClientReferralReporting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientReferralReporting.aspx.designer.cs">
+      <DependentUpon>ClientReferralReporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="UploadForm.aspx.cs">
+      <DependentUpon>UploadForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadForm.aspx.designer.cs">
+      <DependentUpon>UploadForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CKEditor.ascx.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CKEditor.ascx.designer.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMultipleDropdownList.ascx.cs">
+      <DependentUpon>UCMultipleDropdownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMultipleDropdownList.ascx.designer.cs">
+      <DependentUpon>UCMultipleDropdownList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCRemovableDropdownList.ascx.cs">
+      <DependentUpon>UCRemovableDropdownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCRemovableDropdownList.ascx.designer.cs">
+      <DependentUpon>UCRemovableDropdownList.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GCWebUsabilityTheme\Properties\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\LanguageSelection.ascx.fr.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\LanguageSelection.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\App_LocalResources\Forgot.aspx.fr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\Forgot.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\Login.aspx.fr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\Login.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\Register.aspx.fr.resx" />
+    <Content Include="Account\App_LocalResources\Register.aspx.resx" />
+    <Content Include="Account\App_LocalResources\Manage.aspx.resx" />
+    <Content Include="Account\App_LocalResources\ManagePassword.aspx.resx" />
+    <Content Include="Account\App_LocalResources\ResetPassword.aspx.resx" />
+    <Content Include="Account\App_LocalResources\Lockout.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Contact.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Contact.aspx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\App_LocalResources\ResetPasswordConfirmation.aspx.resx" />
+    <Content Include="Account\App_LocalResources\ResetPasswordConfirmation.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SearchAndMenus.ascx.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SearchAndMenus.ascx.fr.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SiteMenu.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SiteMenu.ascx.fr.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Global.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Global.en.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\LanguageSelection.ascx.fr.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\LanguageSelection.ascx.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SearchAndMenus.ascx.fr.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SearchAndMenus.ascx.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SiteMenu.ascx.fr.resx" />
+    <Content Include="GCWebUsabilityTheme\Controls\App_LocalResources\SiteMenu.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\App_LocalResources\Confirm.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\App_LocalResources\Confirm.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\App_LocalResources\OrderLegend.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\App_LocalResources\OrderLegend.ascx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\App_LocalResources\ConfigRoles.aspx.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\App_LocalResources\ConfigRoles.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\App_LocalResources\InquiryLegend.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\App_LocalResources\InquiryLegend.ascx.en.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Email.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Email.Designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Migrations\201701031634155_InitialCreate.resx">
+      <DependentUpon>201701031634155_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703011443265_LastPasswordChange.resx">
+      <DependentUpon>201703011443265_LastPasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="UserControls\App_LocalResources\ForwardedTo.ascx.en.resx" />
+    <Content Include="UserControls\App_LocalResources\ForwardedTo.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\UCLimitDate.ascx.resx" />
+    <Content Include="UserControls\App_LocalResources\UCLimitDate.ascx.en.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62305</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:62305/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

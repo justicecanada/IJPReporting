@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="false">
+  <siteMapNode url="./" title="" description="" roles="*">
+    <siteMapNode url="~/default" title="Accueil"  description="" roles="*">
+      <siteMapNode url="~/Contact" title="Contactez-nous" description="" roles="*" />
+      <siteMapNode url="~/ClientReferralReporting" title="Client/Referral Reporting" description="" />
+      <siteMapNode url="~/Questionnaire" title="Referral" description="" />
+      <siteMapNode url="~/UploadForm" title="Upload Form" description="" />
+    </siteMapNode>
+    <siteMapNode url="~/Management/Documents.aspx" title="Publications" description="" roles="Admin; SuperAdmin" />
+  </siteMapNode>
+</siteMap>

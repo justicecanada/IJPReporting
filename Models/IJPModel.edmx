@@ -1,0 +1,1932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BD_IJPReportingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="action_id" />
+          </Key>
+          <Property Name="action_id" Type="int" Nullable="false" />
+          <Property Name="description_fr" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="description_en" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="expression" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LastPasswordChange" Type="datetime" Nullable="false" />
+          <Property Name="ProgramId" Type="int" />
+          <Property Name="CommunityId" Type="int" />
+        </EntityType>
+        <EntityType Name="Community">
+          <Key>
+            <PropertyRef Name="Community_Id" />
+          </Key>
+          <Property Name="Community_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Community_name_fr" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Community_name_en" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Community_Description_fr" Type="varchar" MaxLength="150" />
+          <Property Name="Community_Description_en" Type="varchar" MaxLength="150" />
+          <Property Name="Region_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Conditions">
+          <Key>
+            <PropertyRef Name="condition_id" />
+          </Key>
+          <Property Name="condition_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="form_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="source_question_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dest_question_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="source_response_choice_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="dest_response_choice_id" Type="uniqueidentifier" />
+          <Property Name="action_id" Type="int" Nullable="false" />
+          <Property Name="operator_id" Type="int" Nullable="false" />
+          <Property Name="is_disabled" Type="bit" Nullable="false" />
+          <Property Name="form_type_id" Type="int" Nullable="false" />
+          <Property Name="note" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="file_id" />
+          </Key>
+          <Property Name="file_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="file_client_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="creator_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="creation_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Form_Type">
+          <Key>
+            <PropertyRef Name="FormTypeId" />
+          </Key>
+          <Property Name="FormTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FormTitle_fr" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FormTitle_en" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FormDescription_fr" Type="varchar" MaxLength="500" />
+          <Property Name="FormDescription_en" Type="varchar" MaxLength="500" />
+          <Property Name="FormNote_fr" Type="varchar" MaxLength="500" />
+          <Property Name="FormNote_en" Type="varchar" MaxLength="500" />
+          <Property Name="CreatorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsObsolete" Type="bit" Nullable="false" />
+          <Property Name="Date_creation" Type="datetime" Nullable="false" />
+          <Property Name="Date_updated" Type="datetime" />
+          <Property Name="IsDisabled" Type="bit" Nullable="false" />
+          <Property Name="FormOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Forms">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="form_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="note_fr" Type="varchar" MaxLength="150" />
+          <Property Name="note_en" Type="varchar" MaxLength="150" />
+          <Property Name="isFinal" Type="bit" Nullable="false" />
+          <Property Name="isObsolete" Type="bit" Nullable="false" />
+          <Property Name="isDisabled" Type="bit" Nullable="false" />
+          <Property Name="date_creation" Type="datetime" Nullable="false" />
+          <Property Name="date_updated" Type="datetime" />
+          <Property Name="creator_id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FormType_id" Type="int" Nullable="false" />
+          <Property Name="ClientFileNumberId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AcceptStatusId" Type="int" />
+          <Property Name="ComplStatusId" Type="int" />
+          <Property Name="RefDate" Type="datetime" Nullable="false" />
+          <Property Name="program_id" Type="int" />
+          <Property Name="community_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Forms_Regions">
+          <Key>
+            <PropertyRef Name="form_id" />
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="form_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="region_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormType_Sections">
+          <Key>
+            <PropertyRef Name="FormType_Id" />
+            <PropertyRef Name="Section_Id" />
+          </Key>
+          <Property Name="FormType_Id" Type="int" Nullable="false" />
+          <Property Name="Section_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operators">
+          <Key>
+            <PropertyRef Name="operator_id" />
+          </Key>
+          <Property Name="operator_id" Type="int" Nullable="false" />
+          <Property Name="description_fr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description_en" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="expression" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Programs">
+          <Key>
+            <PropertyRef Name="programId" />
+          </Key>
+          <Property Name="programId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_fr" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="name_en" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="community_Id" Type="int" Nullable="false" />
+          <Property Name="region_id" Type="int" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="question_type_id" Type="int" Nullable="false" />
+          <Property Name="libelle_fr" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="libelle_en" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="responses_min" Type="int" Nullable="false" />
+          <Property Name="responses_max" Type="int" Nullable="false" />
+          <Property Name="ordre" Type="int" />
+          <Property Name="isObsolete" Type="bit" Nullable="false" />
+          <Property Name="date_creation" Type="datetime" Nullable="false" />
+          <Property Name="creator_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NoQuestion" Type="int" Nullable="false" />
+          <Property Name="Note_fr" Type="varchar" MaxLength="150" />
+          <Property Name="Note_en" Type="varchar" MaxLength="150" />
+          <Property Name="Section_Id" Type="int" Nullable="false" />
+          <Property Name="IsConditional" Type="bit" Nullable="false" />
+          <Property Name="IsMandatory" Type="bit" Nullable="false" />
+          <Property Name="IsSubQuestion" Type="bit" Nullable="false" />
+          <Property Name="TagId" Type="varchar" MaxLength="50" />
+          <Property Name="FormTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuestionTypes">
+          <Key>
+            <PropertyRef Name="question_type_id" />
+          </Key>
+          <Property Name="question_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description_fr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description_en" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="region_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="region_name_fr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="region_name_en" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReponseChoices">
+          <Key>
+            <PropertyRef Name="response_choice_id" />
+          </Key>
+          <Property Name="response_choice_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="text_fr" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="text_en" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="question_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ordre" Type="int" />
+          <Property Name="isObsolete" Type="bit" Nullable="false" />
+          <Property Name="creation_date" Type="datetime" Nullable="false" />
+          <Property Name="creator_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="disabled" Type="bit" Nullable="false" />
+          <Property Name="tagId" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionId" />
+          </Key>
+          <Property Name="SectionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Titre_fr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Titre_en" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Note_fr" Type="varchar" MaxLength="150" />
+          <Property Name="Note_en" Type="varchar" MaxLength="150" />
+          <Property Name="IsObsolete" Type="bit" Nullable="false" />
+          <Property Name="DateCreation" Type="datetime" Nullable="false" />
+          <Property Name="Creator_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Ordre" Type="int" />
+        </EntityType>
+        <EntityType Name="Section_Conditions">
+          <Key>
+            <PropertyRef Name="sectCond_id" />
+          </Key>
+          <Property Name="sectCond_id" Type="int" Nullable="false" />
+          <Property Name="form_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="section_id" Type="int" Nullable="false" />
+          <Property Name="action_id" Type="int" Nullable="false" />
+          <Property Name="operator_id" Type="int" Nullable="false" />
+          <Property Name="form_type_id" Type="int" Nullable="false" />
+          <Property Name="regionid" Type="int" Nullable="false" />
+          <Property Name="note" Type="varchar" MaxLength="50" />
+          <Property Name="is_disabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_id" />
+          </Key>
+          <Property Name="Status_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status_name_fr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status_name_en" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubQuestions">
+          <Key>
+            <PropertyRef Name="QuestionId" />
+            <PropertyRef Name="SubQuestionId" />
+          </Key>
+          <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SubQuestionId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserResponses">
+          <Key>
+            <PropertyRef Name="response_id" />
+          </Key>
+          <Property Name="response_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="question_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="response_choice_id" Type="uniqueidentifier" />
+          <Property Name="devlopment" Type="varchar" MaxLength="50" />
+          <Property Name="CreatorId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Form_Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="question_group" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersRegions">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="userId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="region_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Conditions_Actions">
+          <End Role="Actions" Type="Self.Actions" Multiplicity="1" />
+          <End Role="Conditions" Type="Self.Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="action_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="action_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conditions_Form_Type">
+          <End Role="Form_Type" Type="Self.Form_Type" Multiplicity="1" />
+          <End Role="Conditions" Type="Self.Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="form_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conditions_Operators">
+          <End Role="Operators" Type="Self.Operators" Multiplicity="1" />
+          <End Role="Conditions" Type="Self.Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operators">
+              <PropertyRef Name="operator_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="operator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conditions_Questions">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="Conditions" Type="Self.Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="source_question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="creator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Community">
+          <End Role="Community" Type="Self.Community" Multiplicity="0..1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="Community_Id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="community_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Form_Type">
+          <End Role="Form_Type" Type="Self.Form_Type" Multiplicity="1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="FormType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Programs">
+          <End Role="Programs" Type="Self.Programs" Multiplicity="0..1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="programId" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="program_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Regions_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="Forms_Regions" Type="Self.Forms_Regions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="Forms_Regions">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Regions_Regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="Forms_Regions" Type="Self.Forms_Regions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="Forms_Regions">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="AcceptStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status1">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="ComplStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status2">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Forms" Type="Self.Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="AcceptStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormType_Sections_Form_Type">
+          <End Role="Form_Type" Type="Self.Form_Type" Multiplicity="1" />
+          <End Role="FormType_Sections" Type="Self.FormType_Sections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="FormType_Sections">
+              <PropertyRef Name="FormType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormType_Sections_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="1" />
+          <End Role="FormType_Sections" Type="Self.FormType_Sections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="FormType_Sections">
+              <PropertyRef Name="Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programs_Regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="Programs" Type="Self.Programs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="Programs">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programs_UMB">
+          <End Role="Community" Type="Self.Community" Multiplicity="1" />
+          <End Role="Programs" Type="Self.Programs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="Community_Id" />
+            </Principal>
+            <Dependent Role="Programs">
+              <PropertyRef Name="community_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Form_Type">
+          <End Role="Form_Type" Type="Self.Form_Type" Multiplicity="1" />
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="FormTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_QuestionTypes">
+          <End Role="QuestionTypes" Type="Self.QuestionTypes" Multiplicity="1" />
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionTypes">
+              <PropertyRef Name="question_type_id" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="question_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="1" />
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReponseChoices_Questions">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="ReponseChoices" Type="Self.ReponseChoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="ReponseChoices">
+              <PropertyRef Name="question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Actions">
+          <End Role="Actions" Type="Self.Actions" Multiplicity="1" />
+          <End Role="Section_Conditions" Type="Self.Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="action_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="action_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Form_Type">
+          <End Role="Form_Type" Type="Self.Form_Type" Multiplicity="1" />
+          <End Role="Section_Conditions" Type="Self.Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="form_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Operators">
+          <End Role="Operators" Type="Self.Operators" Multiplicity="1" />
+          <End Role="Section_Conditions" Type="Self.Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operators">
+              <PropertyRef Name="operator_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="operator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="Section_Conditions" Type="Self.Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="regionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="1" />
+          <End Role="Section_Conditions" Type="Self.Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="section_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubQuestions_Questions">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="SubQuestions" Type="Self.SubQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="SubQuestions">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Forms">
+          <End Role="Forms" Type="Self.Forms" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="Form_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Questions">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="UserResponses" Type="Self.UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRegions_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="UsersRegions" Type="Self.UsersRegions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersRegions">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRegions_Regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="UsersRegions" Type="Self.UsersRegions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="UsersRegions">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_IJPReportingModelStoreContainer">
+          <EntitySet Name="Actions" EntityType="Self.Actions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Community" EntityType="Self.Community" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Conditions" EntityType="Self.Conditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Form_Type" EntityType="Self.Form_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Forms" EntityType="Self.Forms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Forms_Regions" EntityType="Self.Forms_Regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormType_Sections" EntityType="Self.FormType_Sections" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operators" EntityType="Self.Operators" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Programs" EntityType="Self.Programs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionTypes" EntityType="Self.QuestionTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReponseChoices" EntityType="Self.ReponseChoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Section_Conditions" EntityType="Self.Section_Conditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubQuestions" EntityType="Self.SubQuestions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserResponses" EntityType="Self.UserResponses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersRegions" EntityType="Self.UsersRegions" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Conditions_Actions" Association="Self.FK_Conditions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conditions_Form_Type" Association="Self.FK_Conditions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conditions_Operators" Association="Self.FK_Conditions_Operators">
+            <End Role="Operators" EntitySet="Operators" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conditions_Questions" Association="Self.FK_Conditions_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_AspNetUsers" Association="Self.FK_Forms_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Community" Association="Self.FK_Forms_Community">
+            <End Role="Community" EntitySet="Community" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Form_Type" Association="Self.FK_Forms_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Programs" Association="Self.FK_Forms_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Regions_Forms" Association="Self.FK_Forms_Regions_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="Forms_Regions" EntitySet="Forms_Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Regions_Regions" Association="Self.FK_Forms_Regions_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Forms_Regions" EntitySet="Forms_Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status" Association="Self.FK_Forms_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status1" Association="Self.FK_Forms_Status1">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status2" Association="Self.FK_Forms_Status2">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormType_Sections_Form_Type" Association="Self.FK_FormType_Sections_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="FormType_Sections" EntitySet="FormType_Sections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormType_Sections_Section" Association="Self.FK_FormType_Sections_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="FormType_Sections" EntitySet="FormType_Sections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programs_Regions" Association="Self.FK_Programs_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Programs" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programs_UMB" Association="Self.FK_Programs_UMB">
+            <End Role="Community" EntitySet="Community" />
+            <End Role="Programs" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Form_Type" Association="Self.FK_Questions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_QuestionTypes" Association="Self.FK_Questions_QuestionTypes">
+            <End Role="QuestionTypes" EntitySet="QuestionTypes" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Section" Association="Self.FK_Questions_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReponseChoices_Questions" Association="Self.FK_ReponseChoices_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="ReponseChoices" EntitySet="ReponseChoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Actions" Association="Self.FK_Section_Conditions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Form_Type" Association="Self.FK_Section_Conditions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Operators" Association="Self.FK_Section_Conditions_Operators">
+            <End Role="Operators" EntitySet="Operators" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Regions" Association="Self.FK_Section_Conditions_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Section" Association="Self.FK_Section_Conditions_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubQuestions_Questions" Association="Self.FK_SubQuestions_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="SubQuestions" EntitySet="SubQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Forms" Association="Self.FK_UserResponses_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Questions" Association="Self.FK_UserResponses_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRegions_AspNetUsers" Association="Self.FK_UsersRegions_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="UsersRegions" EntitySet="UsersRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRegions_Regions" Association="Self.FK_UsersRegions_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="UsersRegions" EntitySet="UsersRegions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_IJPReportingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BD_IJPReportingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actions" EntityType="BD_IJPReportingModel.Actions" />
+          <EntitySet Name="Community" EntityType="BD_IJPReportingModel.Community" />
+          <EntitySet Name="Files" EntityType="BD_IJPReportingModel.Files" />
+          <EntitySet Name="Operators" EntityType="BD_IJPReportingModel.Operators" />
+          <EntitySet Name="Programs" EntityType="BD_IJPReportingModel.Programs" />
+          <EntitySet Name="QuestionTypes" EntityType="BD_IJPReportingModel.QuestionTypes" />
+          <EntitySet Name="Regions" EntityType="BD_IJPReportingModel.Regions" />
+          <EntitySet Name="ReponseChoices" EntityType="BD_IJPReportingModel.ReponseChoices" />
+          <EntitySet Name="UserResponses" EntityType="BD_IJPReportingModel.UserResponses" />
+          <AssociationSet Name="FK_Programs_UMB" Association="BD_IJPReportingModel.FK_Programs_UMB">
+            <End Role="Community" EntitySet="Community" />
+            <End Role="Programs" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Programs_Regions" Association="BD_IJPReportingModel.FK_Programs_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Programs" EntitySet="Programs" />
+          </AssociationSet>
+          <EntitySet Name="Status" EntityType="BD_IJPReportingModel.Status" />
+          <EntitySet Name="AspNetRoles" EntityType="BD_IJPReportingModel.AspNetRoles" />
+          <EntitySet Name="AspNetUsers" EntityType="BD_IJPReportingModel.AspNetUsers" />
+          <EntitySet Name="Forms" EntityType="BD_IJPReportingModel.Forms" />
+          <AssociationSet Name="FK_Forms_AspNetUsers" Association="BD_IJPReportingModel.FK_Forms_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Community" Association="BD_IJPReportingModel.FK_Forms_Community">
+            <End Role="Community" EntitySet="Community" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Programs" Association="BD_IJPReportingModel.FK_Forms_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status" Association="BD_IJPReportingModel.FK_Forms_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status1" Association="BD_IJPReportingModel.FK_Forms_Status1">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Status2" Association="BD_IJPReportingModel.FK_Forms_Status2">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Forms" Association="BD_IJPReportingModel.FK_UserResponses_Forms">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          <AssociationSet Name="Forms_Regions" Association="BD_IJPReportingModel.Forms_Regions">
+            <End Role="Forms" EntitySet="Forms" />
+            <End Role="Regions" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="UsersRegions" Association="BD_IJPReportingModel.UsersRegions">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Regions" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="BD_IJPReportingModel.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="SubQuestions" EntityType="BD_IJPReportingModel.SubQuestions" />
+          <EntitySet Name="Conditions" EntityType="BD_IJPReportingModel.Conditions" />
+          <AssociationSet Name="FK_Conditions_Actions" Association="BD_IJPReportingModel.FK_Conditions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Conditions_Operators" Association="BD_IJPReportingModel.FK_Conditions_Operators">
+            <End Role="Operators" EntitySet="Operators" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <EntitySet Name="Form_Type" EntityType="BD_IJPReportingModel.Form_Type" />
+          <AssociationSet Name="FK_Conditions_Form_Type" Association="BD_IJPReportingModel.FK_Conditions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Forms_Form_Type" Association="BD_IJPReportingModel.FK_Forms_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Forms" EntitySet="Forms" />
+          </AssociationSet>
+          <EntitySet Name="Section_Conditions" EntityType="BD_IJPReportingModel.Section_Conditions" />
+          <AssociationSet Name="FK_Section_Conditions_Actions" Association="BD_IJPReportingModel.FK_Section_Conditions_Actions">
+            <End Role="Actions" EntitySet="Actions" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Form_Type" Association="BD_IJPReportingModel.FK_Section_Conditions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Operators" Association="BD_IJPReportingModel.FK_Section_Conditions_Operators">
+            <End Role="Operators" EntitySet="Operators" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Section_Conditions_Regions" Association="BD_IJPReportingModel.FK_Section_Conditions_Regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <EntitySet Name="Section" EntityType="BD_IJPReportingModel.Section" />
+          <AssociationSet Name="FK_Section_Conditions_Section" Association="BD_IJPReportingModel.FK_Section_Conditions_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Section_Conditions" EntitySet="Section_Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FormType_Sections" Association="BD_IJPReportingModel.FormType_Sections">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Section" EntitySet="Section" />
+          </AssociationSet>
+          <EntitySet Name="Questions" EntityType="BD_IJPReportingModel.Questions" />
+          <AssociationSet Name="FK_Conditions_Questions" Association="BD_IJPReportingModel.FK_Conditions_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Conditions" EntitySet="Conditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Form_Type" Association="BD_IJPReportingModel.FK_Questions_Form_Type">
+            <End Role="Form_Type" EntitySet="Form_Type" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_QuestionTypes" Association="BD_IJPReportingModel.FK_Questions_QuestionTypes">
+            <End Role="QuestionTypes" EntitySet="QuestionTypes" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_Section" Association="BD_IJPReportingModel.FK_Questions_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReponseChoices_Questions" Association="BD_IJPReportingModel.FK_ReponseChoices_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="ReponseChoices" EntitySet="ReponseChoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubQuestions_Questions" Association="BD_IJPReportingModel.FK_SubQuestions_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="SubQuestions" EntitySet="SubQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserResponses_Questions" Association="BD_IJPReportingModel.FK_UserResponses_Questions">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="UserResponses" EntitySet="UserResponses" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Actions">
+          <Key>
+            <PropertyRef Name="action_id" />
+          </Key>
+          <Property Name="action_id" Type="Int32" Nullable="false" />
+          <Property Name="description_fr" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="description_en" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="expression" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Conditions" Relationship="BD_IJPReportingModel.FK_Conditions_Actions" FromRole="Actions" ToRole="Conditions" />
+          <NavigationProperty Name="Section_Conditions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Actions" FromRole="Actions" ToRole="Section_Conditions" />
+        </EntityType>
+        <EntityType Name="Community">
+          <Key>
+            <PropertyRef Name="Community_Id" />
+          </Key>
+          <Property Name="Community_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Community_name_fr" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Community_name_en" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Community_Description_fr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Community_Description_en" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programs" Relationship="BD_IJPReportingModel.FK_Programs_UMB" FromRole="Community" ToRole="Programs" />
+          <Property Name="Region_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_Forms_Community" FromRole="Community" ToRole="Forms" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="file_id" />
+          </Key>
+          <Property Name="file_id" Type="Guid" Nullable="false" />
+          <Property Name="file_client_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="creator_id" Type="Guid" Nullable="false" />
+          <Property Name="creation_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Operators">
+          <Key>
+            <PropertyRef Name="operator_id" />
+          </Key>
+          <Property Name="operator_id" Type="Int32" Nullable="false" />
+          <Property Name="description_fr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description_en" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="expression" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Conditions" Relationship="BD_IJPReportingModel.FK_Conditions_Operators" FromRole="Operators" ToRole="Conditions" />
+          <NavigationProperty Name="Section_Conditions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Operators" FromRole="Operators" ToRole="Section_Conditions" />
+        </EntityType>
+        <EntityType Name="Programs">
+          <Key>
+            <PropertyRef Name="programId" />
+          </Key>
+          <Property Name="programId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_fr" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="name_en" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="community_Id" Type="Int32" Nullable="false" />
+          <Property Name="region_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Community" Relationship="BD_IJPReportingModel.FK_Programs_UMB" FromRole="Programs" ToRole="Community" />
+          <NavigationProperty Name="Regions" Relationship="BD_IJPReportingModel.FK_Programs_Regions" FromRole="Programs" ToRole="Regions" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_Forms_Programs" FromRole="Programs" ToRole="Forms" />
+        </EntityType>
+        <EntityType Name="QuestionTypes">
+          <Key>
+            <PropertyRef Name="question_type_id" />
+          </Key>
+          <Property Name="question_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description_fr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description_en" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_Questions_QuestionTypes" FromRole="QuestionTypes" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="region_id" />
+          </Key>
+          <Property Name="region_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="region_name_fr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="region_name_en" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programs" Relationship="BD_IJPReportingModel.FK_Programs_Regions" FromRole="Regions" ToRole="Programs" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.Forms_Regions" FromRole="Regions" ToRole="Forms" />
+          <NavigationProperty Name="AspNetUsers" Relationship="BD_IJPReportingModel.UsersRegions" FromRole="Regions" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Section_Conditions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Regions" FromRole="Regions" ToRole="Section_Conditions" />
+        </EntityType>
+        <EntityType Name="ReponseChoices">
+          <Key>
+            <PropertyRef Name="response_choice_id" />
+          </Key>
+          <Property Name="response_choice_id" Type="Guid" Nullable="false" />
+          <Property Name="text_fr" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="text_en" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="question_id" Type="Guid" Nullable="false" />
+          <Property Name="ordre" Type="Int32" />
+          <Property Name="isObsolete" Type="Boolean" Nullable="false" />
+          <Property Name="creation_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="creator_id" Type="Guid" Nullable="false" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="disabled" Type="Boolean" Nullable="false" />
+          <Property Name="tagId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_ReponseChoices_Questions" FromRole="ReponseChoices" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="UserResponses">
+          <Key>
+            <PropertyRef Name="response_id" />
+          </Key>
+          <Property Name="response_id" Type="Guid" Nullable="false" />
+          <Property Name="question_id" Type="Guid" Nullable="false" />
+          <Property Name="response_choice_id" Type="Guid" />
+          <Property Name="devlopment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatorId" Type="Guid" Nullable="false" />
+          <Property Name="Form_Id" Type="Guid" Nullable="false" />
+          <Property Name="question_group" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_UserResponses_Forms" FromRole="UserResponses" ToRole="Forms" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_UserResponses_Questions" FromRole="UserResponses" ToRole="Questions" />
+        </EntityType>
+        <Association Name="FK_Programs_UMB">
+          <End Type="BD_IJPReportingModel.Community" Role="Community" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Programs" Role="Programs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="Community_Id" />
+            </Principal>
+            <Dependent Role="Programs">
+              <PropertyRef Name="community_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Programs_Regions">
+          <End Type="BD_IJPReportingModel.Regions" Role="Regions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Programs" Role="Programs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="Programs">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_id" />
+          </Key>
+          <Property Name="Status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status_name_fr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_name_en" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_Forms_Status" FromRole="Status" ToRole="Forms" />
+          <NavigationProperty Name="Forms1" Relationship="BD_IJPReportingModel.FK_Forms_Status1" FromRole="Status" ToRole="Forms" />
+          <NavigationProperty Name="Forms2" Relationship="BD_IJPReportingModel.FK_Forms_Status2" FromRole="Status" ToRole="Forms" />
+          </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="BD_IJPReportingModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastPasswordChange" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProgramId" Type="Int32" />
+          <Property Name="CommunityId" Type="Int32" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_Forms_AspNetUsers" FromRole="AspNetUsers" ToRole="Forms" />
+          <NavigationProperty Name="Regions" Relationship="BD_IJPReportingModel.UsersRegions" FromRole="AspNetUsers" ToRole="Regions" />
+          <NavigationProperty Name="AspNetRoles" Relationship="BD_IJPReportingModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Forms">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="form_id" Type="Guid" Nullable="false" />
+          <Property Name="note_fr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="note_en" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="isFinal" Type="Boolean" Nullable="false" />
+          <Property Name="isObsolete" Type="Boolean" Nullable="false" />
+          <Property Name="isDisabled" Type="Boolean" Nullable="false" />
+          <Property Name="date_creation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date_updated" Type="DateTime" Precision="3" />
+          <Property Name="creator_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FormType_id" Type="Int32" Nullable="false" />
+          <Property Name="ClientFileNumberId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AcceptStatusId" Type="Int32" />
+          <Property Name="ComplStatusId" Type="Int32" />
+          <Property Name="RefDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="program_id" Type="Int32" />
+          <Property Name="community_id" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="BD_IJPReportingModel.FK_Forms_AspNetUsers" FromRole="Forms" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Community" Relationship="BD_IJPReportingModel.FK_Forms_Community" FromRole="Forms" ToRole="Community" />
+          <NavigationProperty Name="Programs" Relationship="BD_IJPReportingModel.FK_Forms_Programs" FromRole="Forms" ToRole="Programs" />
+          <NavigationProperty Name="Status" Relationship="BD_IJPReportingModel.FK_Forms_Status" FromRole="Forms" ToRole="Status" />
+          <NavigationProperty Name="Status1" Relationship="BD_IJPReportingModel.FK_Forms_Status1" FromRole="Forms" ToRole="Status" />
+          <NavigationProperty Name="Status2" Relationship="BD_IJPReportingModel.FK_Forms_Status2" FromRole="Forms" ToRole="Status" />
+          <NavigationProperty Name="UserResponses" Relationship="BD_IJPReportingModel.FK_UserResponses_Forms" FromRole="Forms" ToRole="UserResponses" />
+          <NavigationProperty Name="Regions" Relationship="BD_IJPReportingModel.Forms_Regions" FromRole="Forms" ToRole="Regions" />
+          <NavigationProperty Name="Form_Type" Relationship="BD_IJPReportingModel.FK_Forms_Form_Type" FromRole="Forms" ToRole="Form_Type" />
+        </EntityType>
+        <Association Name="FK_Forms_AspNetUsers">
+          <End Type="BD_IJPReportingModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="creator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Community">
+          <End Type="BD_IJPReportingModel.Community" Role="Community" Multiplicity="0..1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="Community_Id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="community_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Programs">
+          <End Type="BD_IJPReportingModel.Programs" Role="Programs" Multiplicity="0..1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="programId" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="program_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status">
+          <End Type="BD_IJPReportingModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="AcceptStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status1">
+          <End Type="BD_IJPReportingModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="ComplStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Status2">
+          <End Type="BD_IJPReportingModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_id" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="AcceptStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Forms">
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.UserResponses" Role="UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Forms">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="Form_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Forms_Regions">
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <End Type="BD_IJPReportingModel.Regions" Role="Regions" Multiplicity="*" />
+        </Association>
+        <Association Name="UsersRegions">
+          <End Type="BD_IJPReportingModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+          <End Type="BD_IJPReportingModel.Regions" Role="Regions" Multiplicity="*" />
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="BD_IJPReportingModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+          <End Type="BD_IJPReportingModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SubQuestions">
+          <Key>
+            <PropertyRef Name="QuestionId" />
+            <PropertyRef Name="SubQuestionId" />
+          </Key>
+          <Property Name="QuestionId" Type="Guid" Nullable="false" />
+          <Property Name="SubQuestionId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_SubQuestions_Questions" FromRole="SubQuestions" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="Conditions">
+          <Key>
+            <PropertyRef Name="condition_id" />
+          </Key>
+          <Property Name="condition_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="form_id" Type="Guid" Nullable="false" />
+          <Property Name="source_question_id" Type="Guid" Nullable="false" />
+          <Property Name="dest_question_id" Type="Guid" Nullable="false" />
+          <Property Name="source_response_choice_id" Type="Guid" Nullable="false" />
+          <Property Name="dest_response_choice_id" Type="Guid" />
+          <Property Name="action_id" Type="Int32" Nullable="false" />
+          <Property Name="operator_id" Type="Int32" Nullable="false" />
+          <Property Name="is_disabled" Type="Boolean" Nullable="false" />
+          <Property Name="form_type_id" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Actions" Relationship="BD_IJPReportingModel.FK_Conditions_Actions" FromRole="Conditions" ToRole="Actions" />
+          <NavigationProperty Name="Operators" Relationship="BD_IJPReportingModel.FK_Conditions_Operators" FromRole="Conditions" ToRole="Operators" />
+          <NavigationProperty Name="Form_Type" Relationship="BD_IJPReportingModel.FK_Conditions_Form_Type" FromRole="Conditions" ToRole="Form_Type" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_Conditions_Questions" FromRole="Conditions" ToRole="Questions" />
+        </EntityType>
+        <Association Name="FK_Conditions_Actions">
+          <End Type="BD_IJPReportingModel.Actions" Role="Actions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Conditions" Role="Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="action_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="action_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Conditions_Operators">
+          <End Type="BD_IJPReportingModel.Operators" Role="Operators" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Conditions" Role="Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operators">
+              <PropertyRef Name="operator_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="operator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Form_Type">
+          <Key>
+            <PropertyRef Name="FormTypeId" />
+          </Key>
+          <Property Name="FormTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormTitle_fr" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FormTitle_en" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FormDescription_fr" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormDescription_en" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormNote_fr" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FormNote_en" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreatorId" Type="Guid" Nullable="false" />
+          <Property Name="IsObsolete" Type="Boolean" Nullable="false" />
+          <Property Name="Date_creation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Date_updated" Type="DateTime" Precision="3" />
+          <Property Name="IsDisabled" Type="Boolean" Nullable="false" />
+          <Property Name="FormOrder" Type="Int32" />
+          <NavigationProperty Name="Conditions" Relationship="BD_IJPReportingModel.FK_Conditions_Form_Type" FromRole="Form_Type" ToRole="Conditions" />
+          <NavigationProperty Name="Forms" Relationship="BD_IJPReportingModel.FK_Forms_Form_Type" FromRole="Form_Type" ToRole="Forms" />
+          <NavigationProperty Name="Section_Conditions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Form_Type" FromRole="Form_Type" ToRole="Section_Conditions" />
+          <NavigationProperty Name="Section" Relationship="BD_IJPReportingModel.FormType_Sections" FromRole="Form_Type" ToRole="Section" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_Questions_Form_Type" FromRole="Form_Type" ToRole="Questions" />
+        </EntityType>
+        <Association Name="FK_Conditions_Form_Type">
+          <End Type="BD_IJPReportingModel.Form_Type" Role="Form_Type" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Conditions" Role="Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="form_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Forms_Form_Type">
+          <End Type="BD_IJPReportingModel.Form_Type" Role="Form_Type" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Forms" Role="Forms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Forms">
+              <PropertyRef Name="FormType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Section_Conditions">
+          <Key>
+            <PropertyRef Name="sectCond_id" />
+          </Key>
+          <Property Name="sectCond_id" Type="Int32" Nullable="false" />
+          <Property Name="form_id" Type="Guid" Nullable="false" />
+          <Property Name="section_id" Type="Int32" Nullable="false" />
+          <Property Name="action_id" Type="Int32" Nullable="false" />
+          <Property Name="operator_id" Type="Int32" Nullable="false" />
+          <Property Name="form_type_id" Type="Int32" Nullable="false" />
+          <Property Name="regionid" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_disabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Actions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Actions" FromRole="Section_Conditions" ToRole="Actions" />
+          <NavigationProperty Name="Form_Type" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Form_Type" FromRole="Section_Conditions" ToRole="Form_Type" />
+          <NavigationProperty Name="Operators" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Operators" FromRole="Section_Conditions" ToRole="Operators" />
+          <NavigationProperty Name="Regions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Regions" FromRole="Section_Conditions" ToRole="Regions" />
+          <NavigationProperty Name="Section" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Section" FromRole="Section_Conditions" ToRole="Section" />
+        </EntityType>
+        <Association Name="FK_Section_Conditions_Actions">
+          <End Type="BD_IJPReportingModel.Actions" Role="Actions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Section_Conditions" Role="Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actions">
+              <PropertyRef Name="action_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="action_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Form_Type">
+          <End Type="BD_IJPReportingModel.Form_Type" Role="Form_Type" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Section_Conditions" Role="Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="form_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Operators">
+          <End Type="BD_IJPReportingModel.Operators" Role="Operators" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Section_Conditions" Role="Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operators">
+              <PropertyRef Name="operator_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="operator_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Section_Conditions_Regions">
+          <End Type="BD_IJPReportingModel.Regions" Role="Regions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Section_Conditions" Role="Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="region_id" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="regionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionId" />
+          </Key>
+          <Property Name="SectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre_fr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Titre_en" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Note_fr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Note_en" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsObsolete" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreation" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="Creator_Id" Type="Guid" Nullable="false" />
+          <Property Name="Ordre" Type="Int32" />
+          <NavigationProperty Name="Section_Conditions" Relationship="BD_IJPReportingModel.FK_Section_Conditions_Section" FromRole="Section" ToRole="Section_Conditions" />
+          <NavigationProperty Name="Form_Type" Relationship="BD_IJPReportingModel.FormType_Sections" FromRole="Section" ToRole="Form_Type" />
+          <NavigationProperty Name="Questions" Relationship="BD_IJPReportingModel.FK_Questions_Section" FromRole="Section" ToRole="Questions" />
+        </EntityType>
+        <Association Name="FK_Section_Conditions_Section">
+          <End Type="BD_IJPReportingModel.Section" Role="Section" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Section_Conditions" Role="Section_Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Section_Conditions">
+              <PropertyRef Name="section_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FormType_Sections">
+          <End Type="BD_IJPReportingModel.Form_Type" Role="Form_Type" Multiplicity="*" />
+          <End Type="BD_IJPReportingModel.Section" Role="Section" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="Guid" Nullable="false" />
+          <Property Name="question_type_id" Type="Int32" Nullable="false" />
+          <Property Name="libelle_fr" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="libelle_en" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="responses_min" Type="Int32" Nullable="false" />
+          <Property Name="responses_max" Type="Int32" Nullable="false" />
+          <Property Name="ordre" Type="Int32" />
+          <Property Name="isObsolete" Type="Boolean" Nullable="false" />
+          <Property Name="date_creation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="creator_id" Type="Guid" Nullable="false" />
+          <Property Name="NoQuestion" Type="Int32" Nullable="false" />
+          <Property Name="Note_fr" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Note_en" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Section_Id" Type="Int32" Nullable="false" />
+          <Property Name="IsConditional" Type="Boolean" Nullable="false" />
+          <Property Name="IsMandatory" Type="Boolean" Nullable="false" />
+          <Property Name="IsSubQuestion" Type="Boolean" Nullable="false" />
+          <Property Name="TagId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FormTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Conditions" Relationship="BD_IJPReportingModel.FK_Conditions_Questions" FromRole="Questions" ToRole="Conditions" />
+          <NavigationProperty Name="Form_Type" Relationship="BD_IJPReportingModel.FK_Questions_Form_Type" FromRole="Questions" ToRole="Form_Type" />
+          <NavigationProperty Name="QuestionTypes" Relationship="BD_IJPReportingModel.FK_Questions_QuestionTypes" FromRole="Questions" ToRole="QuestionTypes" />
+          <NavigationProperty Name="Section" Relationship="BD_IJPReportingModel.FK_Questions_Section" FromRole="Questions" ToRole="Section" />
+          <NavigationProperty Name="ReponseChoices" Relationship="BD_IJPReportingModel.FK_ReponseChoices_Questions" FromRole="Questions" ToRole="ReponseChoices" />
+          <NavigationProperty Name="SubQuestions" Relationship="BD_IJPReportingModel.FK_SubQuestions_Questions" FromRole="Questions" ToRole="SubQuestions" />
+          <NavigationProperty Name="UserResponses" Relationship="BD_IJPReportingModel.FK_UserResponses_Questions" FromRole="Questions" ToRole="UserResponses" />
+        </EntityType>
+        <Association Name="FK_Conditions_Questions">
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Conditions" Role="Conditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="Conditions">
+              <PropertyRef Name="source_question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Form_Type">
+          <End Type="BD_IJPReportingModel.Form_Type" Role="Form_Type" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Type">
+              <PropertyRef Name="FormTypeId" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="FormTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_QuestionTypes">
+          <End Type="BD_IJPReportingModel.QuestionTypes" Role="QuestionTypes" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionTypes">
+              <PropertyRef Name="question_type_id" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="question_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_Section">
+          <End Type="BD_IJPReportingModel.Section" Role="Section" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="SectionId" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="Section_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReponseChoices_Questions">
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.ReponseChoices" Role="ReponseChoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="ReponseChoices">
+              <PropertyRef Name="question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubQuestions_Questions">
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.SubQuestions" Role="SubQuestions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="SubQuestions">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserResponses_Questions">
+          <End Type="BD_IJPReportingModel.Questions" Role="Questions" Multiplicity="1" />
+          <End Type="BD_IJPReportingModel.UserResponses" Role="UserResponses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="question_id" />
+            </Principal>
+            <Dependent Role="UserResponses">
+              <PropertyRef Name="question_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_IJPReportingModelStoreContainer" CdmEntityContainer="BD_IJPReportingEntities">
+          <EntitySetMapping Name="Actions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Actions">
+              <MappingFragment StoreEntitySet="Actions">
+                <ScalarProperty Name="expression" ColumnName="expression" />
+                <ScalarProperty Name="description_en" ColumnName="description_en" />
+                <ScalarProperty Name="description_fr" ColumnName="description_fr" />
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Community">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Community">
+              <MappingFragment StoreEntitySet="Community">
+                <ScalarProperty Name="Region_id" ColumnName="Region_id" />
+                <ScalarProperty Name="Community_Description_en" ColumnName="Community_Description_en" />
+                <ScalarProperty Name="Community_Description_fr" ColumnName="Community_Description_fr" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Community_name_en" ColumnName="Community_name_en" />
+                <ScalarProperty Name="Community_name_fr" ColumnName="Community_name_fr" />
+                <ScalarProperty Name="Community_Id" ColumnName="Community_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Files">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="creator_id" ColumnName="creator_id" />
+                <ScalarProperty Name="file_client_name" ColumnName="file_client_name" />
+                <ScalarProperty Name="file_id" ColumnName="file_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operators">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Operators">
+              <MappingFragment StoreEntitySet="Operators">
+                <ScalarProperty Name="expression" ColumnName="expression" />
+                <ScalarProperty Name="description_en" ColumnName="description_en" />
+                <ScalarProperty Name="description_fr" ColumnName="description_fr" />
+                <ScalarProperty Name="operator_id" ColumnName="operator_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Programs">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Programs">
+              <MappingFragment StoreEntitySet="Programs">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+                <ScalarProperty Name="community_Id" ColumnName="community_Id" />
+                <ScalarProperty Name="name_en" ColumnName="name_en" />
+                <ScalarProperty Name="name_fr" ColumnName="name_fr" />
+                <ScalarProperty Name="programId" ColumnName="programId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionTypes">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.QuestionTypes">
+              <MappingFragment StoreEntitySet="QuestionTypes">
+                <ScalarProperty Name="description_en" ColumnName="description_en" />
+                <ScalarProperty Name="description_fr" ColumnName="description_fr" />
+                <ScalarProperty Name="question_type_id" ColumnName="question_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Regions">
+              <MappingFragment StoreEntitySet="Regions">
+                <ScalarProperty Name="region_name_en" ColumnName="region_name_en" />
+                <ScalarProperty Name="region_name_fr" ColumnName="region_name_fr" />
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReponseChoices">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.ReponseChoices">
+              <MappingFragment StoreEntitySet="ReponseChoices">
+                <ScalarProperty Name="tagId" ColumnName="tagId" />
+                <ScalarProperty Name="disabled" ColumnName="disabled" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="creator_id" ColumnName="creator_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="isObsolete" ColumnName="isObsolete" />
+                <ScalarProperty Name="ordre" ColumnName="ordre" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="text_en" ColumnName="text_en" />
+                <ScalarProperty Name="text_fr" ColumnName="text_fr" />
+                <ScalarProperty Name="response_choice_id" ColumnName="response_choice_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserResponses">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.UserResponses">
+              <MappingFragment StoreEntitySet="UserResponses">
+                <ScalarProperty Name="question_group" ColumnName="question_group" />
+                <ScalarProperty Name="Form_Id" ColumnName="Form_Id" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="devlopment" ColumnName="devlopment" />
+                <ScalarProperty Name="response_choice_id" ColumnName="response_choice_id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="response_id" ColumnName="response_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Status_name_en" ColumnName="Status_name_en" />
+                <ScalarProperty Name="Status_name_fr" ColumnName="Status_name_fr" />
+                <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="CommunityId" ColumnName="CommunityId" />
+                <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+                <ScalarProperty Name="LastPasswordChange" ColumnName="LastPasswordChange" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Forms">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Forms">
+              <MappingFragment StoreEntitySet="Forms">
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="program_id" ColumnName="program_id" />
+                <ScalarProperty Name="RefDate" ColumnName="RefDate" />
+                <ScalarProperty Name="ComplStatusId" ColumnName="ComplStatusId" />
+                <ScalarProperty Name="AcceptStatusId" ColumnName="AcceptStatusId" />
+                <ScalarProperty Name="ClientFileNumberId" ColumnName="ClientFileNumberId" />
+                <ScalarProperty Name="FormType_id" ColumnName="FormType_id" />
+                <ScalarProperty Name="creator_id" ColumnName="creator_id" />
+                <ScalarProperty Name="date_updated" ColumnName="date_updated" />
+                <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+                <ScalarProperty Name="isDisabled" ColumnName="isDisabled" />
+                <ScalarProperty Name="isObsolete" ColumnName="isObsolete" />
+                <ScalarProperty Name="isFinal" ColumnName="isFinal" />
+                <ScalarProperty Name="note_en" ColumnName="note_en" />
+                <ScalarProperty Name="note_fr" ColumnName="note_fr" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Forms_Regions" TypeName="BD_IJPReportingModel.Forms_Regions" StoreEntitySet="Forms_Regions">
+            <EndProperty Name="Regions">
+              <ScalarProperty Name="region_id" ColumnName="region_id" />
+            </EndProperty>
+            <EndProperty Name="Forms">
+              <ScalarProperty Name="form_id" ColumnName="form_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="UsersRegions" TypeName="BD_IJPReportingModel.UsersRegions" StoreEntitySet="UsersRegions">
+            <EndProperty Name="Regions">
+              <ScalarProperty Name="region_id" ColumnName="region_id" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="userId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="BD_IJPReportingModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="SubQuestions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.SubQuestions">
+              <MappingFragment StoreEntitySet="SubQuestions">
+                <ScalarProperty Name="SubQuestionId" ColumnName="SubQuestionId" />
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conditions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Conditions">
+              <MappingFragment StoreEntitySet="Conditions">
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="form_type_id" ColumnName="form_type_id" />
+                <ScalarProperty Name="is_disabled" ColumnName="is_disabled" />
+                <ScalarProperty Name="operator_id" ColumnName="operator_id" />
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+                <ScalarProperty Name="dest_response_choice_id" ColumnName="dest_response_choice_id" />
+                <ScalarProperty Name="source_response_choice_id" ColumnName="source_response_choice_id" />
+                <ScalarProperty Name="dest_question_id" ColumnName="dest_question_id" />
+                <ScalarProperty Name="source_question_id" ColumnName="source_question_id" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="condition_id" ColumnName="condition_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Form_Type">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Form_Type">
+              <MappingFragment StoreEntitySet="Form_Type">
+                <ScalarProperty Name="FormOrder" ColumnName="FormOrder" />
+                <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+                <ScalarProperty Name="Date_updated" ColumnName="Date_updated" />
+                <ScalarProperty Name="Date_creation" ColumnName="Date_creation" />
+                <ScalarProperty Name="IsObsolete" ColumnName="IsObsolete" />
+                <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+                <ScalarProperty Name="FormNote_en" ColumnName="FormNote_en" />
+                <ScalarProperty Name="FormNote_fr" ColumnName="FormNote_fr" />
+                <ScalarProperty Name="FormDescription_en" ColumnName="FormDescription_en" />
+                <ScalarProperty Name="FormDescription_fr" ColumnName="FormDescription_fr" />
+                <ScalarProperty Name="FormTitle_en" ColumnName="FormTitle_en" />
+                <ScalarProperty Name="FormTitle_fr" ColumnName="FormTitle_fr" />
+                <ScalarProperty Name="FormTypeId" ColumnName="FormTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section_Conditions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Section_Conditions">
+              <MappingFragment StoreEntitySet="Section_Conditions">
+                <ScalarProperty Name="is_disabled" ColumnName="is_disabled" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="regionid" ColumnName="regionid" />
+                <ScalarProperty Name="form_type_id" ColumnName="form_type_id" />
+                <ScalarProperty Name="operator_id" ColumnName="operator_id" />
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+                <ScalarProperty Name="section_id" ColumnName="section_id" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="sectCond_id" ColumnName="sectCond_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Section">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Section">
+              <MappingFragment StoreEntitySet="Section">
+                <ScalarProperty Name="Ordre" ColumnName="Ordre" />
+                <ScalarProperty Name="Creator_Id" ColumnName="Creator_Id" />
+                <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+                <ScalarProperty Name="IsObsolete" ColumnName="IsObsolete" />
+                <ScalarProperty Name="Note_en" ColumnName="Note_en" />
+                <ScalarProperty Name="Note_fr" ColumnName="Note_fr" />
+                <ScalarProperty Name="Titre_en" ColumnName="Titre_en" />
+                <ScalarProperty Name="Titre_fr" ColumnName="Titre_fr" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FormType_Sections" TypeName="BD_IJPReportingModel.FormType_Sections" StoreEntitySet="FormType_Sections">
+            <EndProperty Name="Section">
+              <ScalarProperty Name="SectionId" ColumnName="Section_Id" />
+            </EndProperty>
+            <EndProperty Name="Form_Type">
+              <ScalarProperty Name="FormTypeId" ColumnName="FormType_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="BD_IJPReportingModel.Questions">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="FormTypeId" ColumnName="FormTypeId" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+                <ScalarProperty Name="IsSubQuestion" ColumnName="IsSubQuestion" />
+                <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+                <ScalarProperty Name="IsConditional" ColumnName="IsConditional" />
+                <ScalarProperty Name="Section_Id" ColumnName="Section_Id" />
+                <ScalarProperty Name="Note_en" ColumnName="Note_en" />
+                <ScalarProperty Name="Note_fr" ColumnName="Note_fr" />
+                <ScalarProperty Name="NoQuestion" ColumnName="NoQuestion" />
+                <ScalarProperty Name="creator_id" ColumnName="creator_id" />
+                <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+                <ScalarProperty Name="isObsolete" ColumnName="isObsolete" />
+                <ScalarProperty Name="ordre" ColumnName="ordre" />
+                <ScalarProperty Name="responses_max" ColumnName="responses_max" />
+                <ScalarProperty Name="responses_min" ColumnName="responses_min" />
+                <ScalarProperty Name="libelle_en" ColumnName="libelle_en" />
+                <ScalarProperty Name="libelle_fr" ColumnName="libelle_fr" />
+                <ScalarProperty Name="question_type_id" ColumnName="question_type_id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

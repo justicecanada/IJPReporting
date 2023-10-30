@@ -1,0 +1,362 @@
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+    .bs-callout h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .bs-callout p:last-child {
+        margin-bottom: 0;
+    }
+
+    .bs-callout code {
+        border-radius: 3px;
+    }
+
+    .bs-callout + .bs-callout {
+        margin-top: -5px;
+    }
+
+.bs-callout-default {
+    border-left-color: #777;
+}
+
+    .bs-callout-default h4 {
+        color: #777;
+    }
+
+.bs-callout-primary {
+    border-left-color: #2e2e40;
+}
+
+    .bs-callout-primary h4 {
+        color: #2e2e40;
+    }
+
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+
+    .bs-callout-success h4 {
+        color: #5cb85c;
+    }
+
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+
+    .bs-callout-danger h4 {
+        color: #d9534f;
+    }
+
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+
+    .bs-callout-warning h4 {
+        color: #f0ad4e;
+    }
+
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+
+    .bs-callout-info h4 {
+        color: #5bc0de;
+    }
+
+.bg-color-blue {
+    background-color: blue;
+}
+
+.mediumIcon {
+    font-size: 35px !important;
+}
+
+.h3, .h4 {
+    margin-top: 0 !important;
+}
+
+.h6 {
+    margin-top: 6px !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+
+
+
+/*main*/
+body {
+    background: #f4f7f9 !important;
+    font-family: "Noto Sans",sans-serif !important;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/*REQUIRED*/
+strong.required {
+    display: none;
+}
+
+/*Link*/
+#Main_container a {
+    color: #31353a;
+}
+
+/*Button*/
+.btn, a.btn, button.btn, input.btn, main .btn, summary.btn {
+    border-radius: 0 !important;
+    transition: background-color .1s;
+    color: #31353a;
+}
+
+.btn-success {
+    background-color: #1b6c1c !important;
+    color: #fff !important;
+}
+
+    .btn-success:active, .btn-success:focus, .btn-success:hover, a.btn-success:active, a.btn-success:focus, a.btn-success:hover, button.btn-success:active, button.btn-success:focus, button.btn-success:hover, summary.btn-success:active, summary.btn-success:focus, summary.btn-success:hover {
+        background-color: #13724c !important;
+        border: 3px solid #13724c !important;
+    }
+
+.btn-primary {
+    background-color: #2e2e40 !important;
+    color: #fff !important;
+}
+
+.btn-success, .btn-success:visited, a.btn-success, a.btn-success:visited, button.btn-success, button.btn-success:visited, summary.btn-success, summary.btn-success:visited {
+    background: #17875a !important;
+    border: 3px solid #17875a !important;
+}
+
+.btn-primary, .btn-primary:visited, a.btn-primary, a.btn-primary:visited, button.btn-primary, button.btn-primary:visited, summary.btn-primary, summary.btn-primary:visited {
+    border: 3px solid #2e2e40 !important;
+}
+
+.btn-nostyle {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+/*input*/
+
+.wizardPh input.form-control, .wizardPh select, .form-group textarea.form-control {
+    width: 70%;
+}
+
+.bs-callout .form-group select, .bs-callout .form-group input.form-control {
+    width: 78%;
+}
+
+input[type='date'] {
+    width: 100% !important;
+}
+
+
+
+/*Pagination*/
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #2e2e40 !important;
+    border-color: #2e2e40 !important;
+    color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius: 0 !important;
+}
+
+/*background image parallax*/
+header:not(.modal-header) {
+    /*background-image: url("../Images/alberta-amazing-attraction-banff-417074.jpg") !important;*/
+    background-image: url("../Images/scenic-view-of-mountains-under-cloudy-sky-2695391.jpg") !important;
+    background-attachment: fixed;
+    /*background-position-y: -20rem;*/
+    /*background-position-y: -15rem;*/
+    background-position-y: -30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*top and footer background*/
+#wb-bar, #gc-info {
+    background: #1d1d1d !important;
+    opacity: 0.9;
+}
+
+    #wb-bar #gc-bar li a {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+/*page title*/
+#wb-sttl a {
+    /* color: #2e2e40 !important;*/
+    color: #fff !important;
+    /*text-shadow: none !important;*/
+    text-shadow: 1px 2px #666 !important;
+}
+
+#wb-bar .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+/*Canada logo*/
+#wmms {
+    display: none;
+}
+
+/*nav bar*/
+#wb-sm .nvbar {
+    background: #1ca56f !important;
+    border: 0 !important;
+    opacity: 0.85 !important;
+}
+
+    #wb-sm .active a, #wb-sm .active summary, #wb-sm .nvbar ul.menu > li > a:hover, #wb-sm .sm, #wb-sm .sm a, #wb-sm .sm summary {
+        border: 0 !important;
+        background: #167f56 !important;
+        color: #fff !important;
+    }
+    /*nav sep*/
+    #wb-sm .nvbar ul.menu > li {
+        border-right: 0.1rem solid #fff !important;
+    }
+
+#wb-sm .navbar-right > ul.menu > li:last-child {
+    border-right: 0 !important;
+}
+
+#wb-sm .nvbar ul.menu > li > a {
+    color: #fff !important;
+}
+
+    /*container*/
+    #wb-sm .nvbar ul.menu > li > a.wb-navcurr, #wb-sm .sm .slflnk a.wb-navcurr, #wb-sm .sm a.wb-navcurr, #wb-sm .sm summary.wb-navcurr {
+        background: #167f56 !important;
+    }
+
+#wb-bc .container, #wb-info > .container > ::before, body main.container, body form > header + .container {
+    border: 0 !important;
+}
+
+/*#wb-bc .container, #wb-info > .container > ::before {
+    opacity: 0.85 !important;
+}*/
+body main.container, body form > header + .container {
+    border-top: 0.8rem solid #1ca56f !important;
+    box-shadow: 0px 0.4rem 1.4rem rgba(0,0,0,0.05);
+    min-height: 56rem;
+}
+
+/*breadcrumb*/
+/*header #wb-bc ol.breadcrumb {
+}*/
+
+header #wb-bc ol.breadcrumb li, header #wb-bc ol.breadcrumb li a {
+    /*color: #434458 !important;*/
+    color: #000 !important;
+}
+/*panel*/
+.panel-default .panel-heading {
+    background-color: #d5e2e9 !important;
+}
+
+/*summary*/
+details summary {
+    background-color: #d5e2e9 !important;
+    color: #2e2e40 !important;
+}
+
+    details summary:focus, details summary:hover {
+        text-decoration: none !important;
+    }
+/*
+    details summary span:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\00a0\f002\00a0";
+    }
+
+    */
+.panel-heading span.h3 {
+    font-variant: small-caps;
+}
+/*Add Referral*/
+/*Manage Account*/
+.manageAccount span.h1, .manageAccount span.h2, .manageAccount span.h3, .manageAccount span.h4, .manageAccount span.h5, .manageAccount span.h6 {
+    margin-bottom: 0;
+}
+
+.manageAccount div.panel-heading {
+    display: flex;
+}
+
+.manageAccount span.h6 {
+    margin-left: auto
+}
+
+/*Referrals*/
+.wb-date-wrap {
+    margin-right: 2%;
+}
+
+.panel.home-banner {
+    background-color: #2e2e40;
+    padding: 30px;
+    font-family: Montserrat;
+}
+
+    .panel.home-banner .lead {
+        font-size: 1.5rem;
+    }
+
+.text-white {
+    color: #fff
+}
+
+.bg-grey {
+    background-color: #f4f7f9 !important;
+}
+
+#resultPanel td, #resultPanel th {
+    padding-left: 3px !important;
+}
+
+/*.customCheckbox fieldset{
+    margin-bottom:0!important;
+}*/
